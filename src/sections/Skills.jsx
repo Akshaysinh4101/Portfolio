@@ -101,7 +101,7 @@ const CLOUD_ITEMS = [
 
 export const Skills = () => {
   const sectionRef = useRef(null);
-  const isInView = useInView(sectionRef, { once: true, margin: "-100px" });
+  const isInView = useInView(sectionRef, { once: true, margin: "-50px 0px" });
 
   return (
     <section

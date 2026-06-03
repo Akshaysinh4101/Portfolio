@@ -15,7 +15,7 @@ const TimelineCard = ({ experience, idx }) => {
       <motion.div
         initial={{ opacity: 0, x: -30 }}
         whileInView={{ opacity: 1, x: 0 }}
-        viewport={{ once: true, margin: "-100px" }}
+        viewport={{ once: true, margin: "-50px 0px" }}
         transition={{ duration: 0.6, ease: "easeOut", delay: idx * 0.1 }}
         className="glass-panel rounded-2xl p-6 shadow-lg relative overflow-hidden transition-all duration-300 hover:scale-[1.01] hover:border-purple-500/20 hover:shadow-purple-500/5"
       >

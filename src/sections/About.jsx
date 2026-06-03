@@ -6,7 +6,7 @@ import { fadeInUp, staggerContainer } from "../animations/variants";
 const AnimatedCounter = ({ value, suffix, duration = 2 }) => {
   const [count, setCount] = useState(0);
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-100px" });
+  const isInView = useInView(ref, { once: true, margin: "-50px 0px" });
 
   useEffect(() => {
     if (isInView) {
@@ -29,7 +29,7 @@ const AnimatedCounter = ({ value, suffix, duration = 2 }) => {
 
 export const About = () => {
   const containerRef = useRef(null);
-  const isInView = useInView(containerRef, { once: true, margin: "-100px" });
+  const isInView = useInView(containerRef, { once: true, margin: "-50px 0px" });
   const [activeTab, setActiveTab] = useState("profile.js");
 
   const techBadges = [

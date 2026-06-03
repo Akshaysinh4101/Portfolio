@@ -78,7 +78,7 @@ export const PROJECTS = [
     tech: ["Node.js", "React.js", "PostgreSQL", "AWS"],
     liveUrl: "#",
     githubUrl: "#",
-    image: "https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=600&auto=format&fit=crop"
   },
   {
     title: "Pet Care Booking Platform",
@@ -86,7 +86,7 @@ export const PROJECTS = [
     tech: ["Laravel", "MySQL", "AWS", "Stripe"],
     liveUrl: "#",
     githubUrl: "#",
-    image: "https://images.unsplash.com/photo-1583511655857-d19b40a7a54e?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=600&auto=format&fit=crop"
   },
   {
     title: "Fintech Transaction System",
@@ -94,7 +94,7 @@ export const PROJECTS = [
     tech: ["Node.js", "Redis", "PostgreSQL"],
     liveUrl: "#",
     githubUrl: "#",
-    image: "https://images.unsplash.com/photo-1559526324-4b87b5e36e44?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1639762681485-074b7f938ba0?q=80&w=600&auto=format&fit=crop"
   },
   {
     title: "Healthcare Management System",
@@ -102,7 +102,7 @@ export const PROJECTS = [
     tech: ["React.js", "Laravel", "MySQL"],
     liveUrl: "#",
     githubUrl: "#",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?q=80&w=600&auto=format&fit=crop"
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=600&auto=format&fit=crop"
   }
 ];
 

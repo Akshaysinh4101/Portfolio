@@ -1,0 +1,278 @@
+@import "tailwindcss";
+
+@theme {
+  --color-darkBg: #050508;
+  --color-darkCard: rgba(18, 18, 24, 0.65);
+  --color-darkCardHover: rgba(25, 25, 35, 0.8);
+  --color-glassBorder: rgba(255, 255, 255, 0.08);
+  --color-accentPurple: #8b5cf6;
+  --color-accentPink: #d946ef;
+  --color-accentBlue: #3b82f6;
+  --color-accentCyan: #06b6d4;
+
+  --font-sans: "Inter", "sans-serif";
+  --font-heading: "Outfit", "sans-serif";
+
+  --animate-spin-slow: spin 25s linear infinite;
+  --animate-pulse-slow: pulse 10s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  --animate-float: float 6s ease-in-out infinite;
+
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+}
+
+:root {
+  color-scheme: dark;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #050508;
+}
+::-webkit-scrollbar-thumb {
+  background: #1b1b26;
+  border-radius: 5px;
+  border: 2px solid #050508;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #313147;
+}
+
+html {
+  scroll-behavior: initial;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #050508;
+  color: #f1f5f9;
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+}
+
+/* Smooth Scrolling Support */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overflow: clip;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* Typography Utilities */
+.heading-font {
+  font-family: 'Outfit', sans-serif;
+}
+
+/* Background Mesh & Orbs */
+.grid-overlay {
+  background-size: 50px 50px;
+  background-image: 
+    linear-gradient(to right, rgba(255, 255, 255, 0.02) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.02) 1px, transparent 1px);
+}
+
+/* Text Gradients */
+.text-gradient-primary {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-indigo-400 via-purple-400 to-pink-400;
+}
+
+.text-gradient-cyan {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500;
+}
+
+.text-gradient-purple {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-indigo-400;
+}
+
+/* Glassmorphism Components */
+.glass-panel {
+  background: rgba(10, 10, 18, 0.45);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+}
+
+.glass-panel-hover {
+  @apply transition-all duration-300;
+}
+
+.glass-panel-hover:hover {
+  background: rgba(18, 18, 30, 0.65);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(139, 92, 246, 0.15);
+}
+
+/* Card hover styling */
+.glass-panel {
+  transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+}
+.glass-panel:hover {
+  background: rgba(18, 18, 30, 0.65);
+  border-color: rgba(139, 92, 246, 0.25);
+  box-shadow: 0 15px 35px -10px rgba(139, 92, 246, 0.15);
+}
+
+/* Glowing Orbs */
+.orb-purple {
+  filter: blur(130px);
+  background: radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(139, 92, 246, 0) 70%);
+}
+
+.orb-cyan {
+  filter: blur(130px);
+  background: radial-gradient(circle, rgba(6, 182, 212, 0.25) 0%, rgba(6, 182, 212, 0) 70%);
+}
+
+.orb-pink {
+  filter: blur(120px);
+  background: radial-gradient(circle, rgba(217, 70, 239, 0.2) 0%, rgba(217, 70, 239, 0) 70%);
+}
+
+/* Magnetic Button Wrapper */
+.magnetic-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+/* Custom Cursor Hide standard on desktop */
+@media (min-width: 1024px) {
+  .custom-cursor-active,
+  .custom-cursor-active * {
+    cursor: none !important;
+  }
+}
+
+/* Keyboard Accessibility Focus Outlines */
+*:focus-visible {
+  outline: 2px solid #a855f7 !important;
+  outline-offset: 4px !important;
+  box-shadow: 0 0 0 4px rgba(168, 85, 247, 0.25) !important;
+}
+
+
+
+/* Skip to Content style (hidden by default, visible on focus) */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: linear-gradient(135deg, #8b5cf6, #3b82f6);
+  color: white;
+  padding: 10px 20px;
+  border-radius: 9999px;
+  z-index: 9999;
+  font-family: 'Outfit', sans-serif;
+  font-size: 12px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  transition: top 0.3s ease;
+  box-shadow: 0 10px 25px -5px rgba(139, 92, 246, 0.5);
+  text-decoration: none;
+}
+
+.skip-link:focus {
+  top: 20px;
+}
+
+/* Infinite Marquee Loop Animations */
+@keyframes marquee-left {
+  0% { transform: translate3d(0, 0, 0); }
+  100% { transform: translate3d(-50%, 0, 0); }
+}
+
+@keyframes marquee-right {
+  0% { transform: translate3d(-50%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+.animate-marquee-left {
+  animation: marquee-left 35s linear infinite;
+}
+
+.animate-marquee-right {
+  animation: marquee-right 35s linear infinite;
+}
+
+.animate-marquee-slow {
+  animation: marquee-left 50s linear infinite;
+}
+
+/* Floating Drifting Animations */
+@keyframes float-drift-1 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(5px, -10px, 0); }
+}
+
+@keyframes float-drift-2 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-7px, -6px, 0); }
+}
+
+@keyframes float-drift-3 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(6px, -8px, 0); }
+}
+
+@keyframes float-drift-4 {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  50% { transform: translate3d(-4px, -10px, 0); }
+}
+
+.animate-float-drift-1 {
+  animation: float-drift-1 7s ease-in-out infinite;
+}
+
+.animate-float-drift-2 {
+  animation: float-drift-2 9s ease-in-out infinite;
+}
+
+.animate-float-drift-3 {
+  animation: float-drift-3 8s ease-in-out infinite;
+}
+
+.animate-float-drift-4 {
+  animation: float-drift-4 10s ease-in-out infinite;
+}
+
+/* Pause marquee scrolling when any parent row is hovered */
+.marquee-row:hover .animate-marquee-left,
+.marquee-row:hover .animate-marquee-right,
+.marquee-row:hover .animate-marquee-slow {
+  animation-play-state: paused;
+}
+
+/* Hide scrollbar utility class */
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
